@@ -4396,7 +4396,9 @@ template <typename Locale, typename... T,
           FMT_ENABLE_IF(detail::is_locale<Locale>::value)>
 inline auto format(const Locale& loc, format_string<T...> fmt, T&&... args)
     -> std::string {
-  return fmt::vformat(loc, string_view(fmt), fmt::make_format_args(args...));
+// DIVERGENCE BEGIN - Worked around error C2039: 'vformat': is not a member of 'fmt'
+  return vformat(loc, string_view(fmt), fmt::make_format_args(args...));
+// DIVERGENCE END
 }
 
 template <typename OutputIt, typename Locale,
