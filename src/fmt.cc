@@ -41,7 +41,15 @@ module;
 #include <limits.h>
 #include <stdint.h>
 #include <stdio.h>
+// DIVERGENCE END
+// DIVERGENCE BEGIN - Worked around error C2129: static function '...' declared but not defined
+#define static
+// DIVERGENCE END
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
 #include <time.h>
+// DIVERGENCE END
+// DIVERGENCE BEGIN - Worked around error C2129: static function '...' declared but not defined
+#undef static
 // DIVERGENCE END
 
 #if __has_include(<cxxabi.h>)
