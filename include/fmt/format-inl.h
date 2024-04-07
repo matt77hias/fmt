@@ -147,6 +147,10 @@ FMT_API FMT_FUNC auto format_facet<std::locale>::do_put(
 }
 #endif
 
+// DIVERGENCE BEGIN - Worked around error C2039: 'vformat': is not a member of 'fmt'
+FMT_API auto vformat(string_view fmt, format_args args) -> std::string;
+// DIVERGENCE END
+
 FMT_FUNC auto vsystem_error(int error_code, string_view fmt, format_args args)
     -> std::system_error {
   auto ec = std::error_code(error_code, std::generic_category());
