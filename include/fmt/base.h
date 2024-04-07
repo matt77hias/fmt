@@ -8,13 +8,17 @@
 #ifndef FMT_BASE_H_
 #define FMT_BASE_H_
 
-#include <limits.h>  // CHAR_BIT
-#include <stdio.h>   // FILE
-#include <string.h>  // strlen
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <limits.h>  // CHAR_BIT
+//#include <stdio.h>   // FILE
+//#include <string.h>  // strlen
+// DIVERGENCE END
 
 // <cstddef> is also included transitively from <type_traits>.
-#include <cstddef>      // std::byte
-#include <type_traits>  // std::enable_if
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <cstddef>      // std::byte
+//#include <type_traits>  // std::enable_if
+// DIVERGENCE END
 
 // The fmt library version in the form major * 10000 + minor * 100 + patch.
 #define FMT_VERSION 100202

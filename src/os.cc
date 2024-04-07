@@ -12,7 +12,9 @@
 
 #include "fmt/os.h"
 
-#include <climits>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <climits>
+// DIVERGENCE END
 
 #if FMT_USE_FCNTL
 #  include <sys/stat.h>

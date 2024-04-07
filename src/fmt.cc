@@ -2,38 +2,47 @@ module;
 
 // Put all implementation-provided headers into the global module fragment
 // to prevent attachment to this module.
-#include <algorithm>
-#include <cerrno>
-#include <chrono>
-#include <climits>
-#include <cmath>
-#include <cstddef>
-#include <cstdint>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <ctime>
-#include <exception>
-#include <filesystem>
-#include <fstream>
-#include <functional>
-#include <iterator>
-#include <limits>
-#include <locale>
-#include <memory>
-#include <optional>
-#include <ostream>
-#include <stdexcept>
-#include <string>
-#include <string_view>
-#include <system_error>
-#include <thread>
-#include <type_traits>
-#include <typeinfo>
-#include <utility>
-#include <variant>
-#include <vector>
-#include <version>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <algorithm>
+//#include <cerrno>
+//#include <chrono>
+//#include <climits>
+//#include <cmath>
+//#include <cstddef>
+//#include <cstdint>
+//#include <cstdio>
+//#include <cstdlib>
+//#include <cstring>
+//#include <ctime>
+//#include <exception>
+//#include <filesystem>
+//#include <fstream>
+//#include <functional>
+//#include <iterator>
+//#include <limits>
+//#include <locale>
+//#include <memory>
+//#include <optional>
+//#include <ostream>
+//#include <stdexcept>
+//#include <string>
+//#include <string_view>
+//#include <system_error>
+//#include <thread>
+//#include <type_traits>
+//#include <typeinfo>
+//#include <utility>
+//#include <variant>
+//#include <vector>
+//#include <version>
+// DIVERGENCE END
+
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+#include <limits.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <time.h>
+// DIVERGENCE END
 
 #if __has_include(<cxxabi.h>)
 #  include <cxxabi.h>
@@ -69,6 +78,10 @@ module;
 #endif
 
 export module fmt;
+
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+import std;
+// DIVERGENCE END
 
 #define FMT_EXPORT export
 #define FMT_BEGIN_EXPORT export {

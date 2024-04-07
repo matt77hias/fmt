@@ -8,15 +8,17 @@
 #ifndef FMT_CHRONO_H_
 #define FMT_CHRONO_H_
 
-#include <algorithm>
-#include <chrono>
-#include <cmath>    // std::isfinite
-#include <cstring>  // std::memcpy
-#include <ctime>
-#include <iterator>
-#include <locale>
-#include <ostream>
-#include <type_traits>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <algorithm>
+//#include <chrono>
+//#include <cmath>    // std::isfinite
+//#include <cstring>  // std::memcpy
+//#include <ctime>
+//#include <iterator>
+//#include <locale>
+//#include <ostream>
+//#include <type_traits>
+// DIVERGENCE END
 
 #include "format.h"
 

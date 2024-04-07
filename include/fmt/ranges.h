@@ -8,10 +8,12 @@
 #ifndef FMT_RANGES_H_
 #define FMT_RANGES_H_
 
-#include <initializer_list>
-#include <iterator>
-#include <tuple>
-#include <type_traits>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <initializer_list>
+//#include <iterator>
+//#include <tuple>
+//#include <type_traits>
+// DIVERGENCE END
 
 #include "format.h"
 

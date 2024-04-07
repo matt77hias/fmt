@@ -38,30 +38,40 @@
 #  define FMT_REMOVE_TRANSITIVE_INCLUDES
 #endif
 
-#include <cmath>             // std::signbit
-#include <cstdint>           // uint32_t
-#include <cstring>           // std::memcpy
-#include <initializer_list>  // std::initializer_list
-#include <limits>            // std::numeric_limits
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <cmath>             // std::signbit
+//#include <cstdint>           // uint32_t
+//#include <cstring>           // std::memcpy
+//#include <initializer_list>  // std::initializer_list
+//#include <limits>            // std::numeric_limits
+// DIVERGENCE END
 #if defined(__GLIBCXX__) && !defined(_GLIBCXX_USE_DUAL_ABI)
 // Workaround for pre gcc 5 libstdc++.
-#  include <memory>  // std::allocator_traits
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#  include <memory>  // std::allocator_traits
+// DIVERGENCE END
 #endif
-#include <stdexcept>     // std::runtime_error
-#include <string>        // std::string
-#include <system_error>  // std::system_error
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <stdexcept>     // std::runtime_error
+//#include <string>        // std::string
+//#include <system_error>  // std::system_error
+// DIVERGENCE END
 
 #include "base.h"
 
 // Checking FMT_CPLUSPLUS for warning suppression in MSVC.
 #if FMT_HAS_INCLUDE(<bit>) && FMT_CPLUSPLUS > 201703L
-#  include <bit>  // std::bit_cast
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#  include <bit>  // std::bit_cast
+// DIVERGENCE END
 #endif
 
 // libc++ supports string_view in pre-c++17.
 #if FMT_HAS_INCLUDE(<string_view>) && \
     (FMT_CPLUSPLUS >= 201703L || defined(_LIBCPP_VERSION))
-#  include <string_view>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#  include <string_view>
+// DIVERGENCE END
 #  define FMT_USE_STRING_VIEW
 #endif
 

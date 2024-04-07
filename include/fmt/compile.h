@@ -8,7 +8,9 @@
 #ifndef FMT_COMPILE_H_
 #define FMT_COMPILE_H_
 
-#include <iterator>  // std::back_inserter
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <iterator>  // std::back_inserter
+// DIVERGENCE END
 
 #include "format.h"
 

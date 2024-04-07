@@ -8,10 +8,12 @@
 #ifndef FMT_OS_H_
 #define FMT_OS_H_
 
-#include <cerrno>
-#include <cstddef>
-#include <cstdio>
-#include <system_error>  // std::system_error
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <cerrno>
+//#include <cstddef>
+//#include <cstdio>
+//#include <system_error>  // std::system_error
+// DIVERGENCE END
 
 #include "format.h"
 

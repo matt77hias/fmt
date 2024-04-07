@@ -8,9 +8,11 @@
 #ifndef FMT_ARGS_H_
 #define FMT_ARGS_H_
 
-#include <functional>  // std::reference_wrapper
-#include <memory>      // std::unique_ptr
-#include <vector>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <functional>  // std::reference_wrapper
+//#include <memory>      // std::unique_ptr
+//#include <vector>
+// DIVERGENCE END
 
 #include "format.h"  // std_string_view
 

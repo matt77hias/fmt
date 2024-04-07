@@ -8,43 +8,57 @@
 #ifndef FMT_STD_H_
 #define FMT_STD_H_
 
-#include <atomic>
-#include <bitset>
-#include <complex>
-#include <cstdlib>
-#include <exception>
-#include <memory>
-#include <thread>
-#include <type_traits>
-#include <typeinfo>
-#include <utility>
-#include <vector>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <atomic>
+//#include <bitset>
+//#include <complex>
+//#include <cstdlib>
+//#include <exception>
+//#include <memory>
+//#include <thread>
+//#include <type_traits>
+//#include <typeinfo>
+//#include <utility>
+//#include <vector>
+// DIVERGENCE END
 
 #include "format.h"
 #include "ostream.h"
 
 #if FMT_HAS_INCLUDE(<version>)
-#  include <version>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#  include <version>
+// DIVERGENCE END
 #endif
 // Checking FMT_CPLUSPLUS for warning suppression in MSVC.
 #if FMT_CPLUSPLUS >= 201703L
 #  if FMT_HAS_INCLUDE(<filesystem>)
-#    include <filesystem>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#    include <filesystem>
+// DIVERGENCE END
 #  endif
 #  if FMT_HAS_INCLUDE(<variant>)
-#    include <variant>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#    include <variant>
+// DIVERGENCE END
 #  endif
 #  if FMT_HAS_INCLUDE(<optional>)
-#    include <optional>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#    include <optional>
+// DIVERGENCE END
 #  endif
 #endif
 
 #if FMT_HAS_INCLUDE(<expected>) && FMT_CPLUSPLUS > 202002L
-#  include <expected>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#  include <expected>
+// DIVERGENCE END
 #endif
 
 #if FMT_CPLUSPLUS > 201703L && FMT_HAS_INCLUDE(<source_location>)
-#  include <source_location>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#  include <source_location>
+// DIVERGENCE END
 #endif
 
 // GCC 4 does not support FMT_HAS_INCLUDE.

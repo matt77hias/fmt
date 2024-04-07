@@ -8,14 +8,18 @@
 #ifndef FMT_XCHAR_H_
 #define FMT_XCHAR_H_
 
-#include <cwchar>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <cwchar>
+// DIVERGENCE END
 
 #include "color.h"
 #include "format.h"
 #include "ranges.h"
 
 #ifndef FMT_STATIC_THOUSANDS_SEPARATOR
-#  include <locale>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#  include <locale>
+// DIVERGENCE END
 #endif
 
 FMT_BEGIN_NAMESPACE

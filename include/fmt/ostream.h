@@ -8,7 +8,9 @@
 #ifndef FMT_OSTREAM_H_
 #define FMT_OSTREAM_H_
 
-#include <fstream>  // std::filebuf
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <fstream>  // std::filebuf
+// DIVERGENCE END
 
 #ifdef _WIN32
 #  ifdef __GLIBCXX__

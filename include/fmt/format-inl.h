@@ -8,14 +8,18 @@
 #ifndef FMT_FORMAT_INL_H_
 #define FMT_FORMAT_INL_H_
 
-#include <algorithm>
-#include <cerrno>  // errno
-#include <climits>
-#include <cmath>
-#include <exception>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <algorithm>
+//#include <cerrno>  // errno
+//#include <climits>
+//#include <cmath>
+//#include <exception>
+// DIVERGENCE END
 
 #ifndef FMT_STATIC_THOUSANDS_SEPARATOR
-#  include <locale>
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#  include <locale>
+// DIVERGENCE END
 #endif
 
 #if defined(_WIN32) && !defined(FMT_USE_WRITE_CONSOLE)

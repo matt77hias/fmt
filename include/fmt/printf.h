@@ -8,8 +8,10 @@
 #ifndef FMT_PRINTF_H_
 #define FMT_PRINTF_H_
 
-#include <algorithm>  // std::max
-#include <limits>     // std::numeric_limits
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+//#include <algorithm>  // std::max
+//#include <limits>     // std::numeric_limits
+// DIVERGENCE END
 
 #include "format.h"
 
