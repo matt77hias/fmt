@@ -109,14 +109,10 @@
 #endif
 
 // Detect consteval, C++20 constexpr extensions and std::is_constant_evaluated.
-// DIVERGENCE BEGIN - Resolved FMT_USE_CONSTEVAL for MSVC
-#if FMT_CPLUSPLUS < 201709L
+#if !defined(__cpp_lib_is_constant_evaluated)
 #  define FMT_USE_CONSTEVAL 0
-#elif FMT_MSC_VERSION && FMT_MSC_VERSION >= 1929
-#  define FMT_USE_CONSTEVAL 1
-#elif !defined(__cpp_lib_is_constant_evaluated)
+#elif FMT_CPLUSPLUS < 201709L
 #  define FMT_USE_CONSTEVAL 0
-// DIVERGENCE END
 #elif FMT_GLIBCXX_RELEASE && FMT_GLIBCXX_RELEASE < 10
 #  define FMT_USE_CONSTEVAL 0
 #elif FMT_LIBCPP_VERSION && FMT_LIBCPP_VERSION < 10000
@@ -364,11 +360,6 @@ constexpr auto is_constant_evaluated(bool default_value = false) noexcept
 #elif defined(__cpp_lib_is_constant_evaluated)
   ignore_unused(default_value);
   return std::is_constant_evaluated();
- // DIVERGENCE BEGIN - Resolved FMT_USE_CONSTEVAL for MSVC
-#elif FMT_MSC_VERSION && FMT_USE_CONSTEVAL
-	ignore_unused(default_value);
-	return std::is_constant_evaluated();
-// DIVERGENCE END
 #else
   return default_value;
 #endif
