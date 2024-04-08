@@ -52,6 +52,10 @@ module;
 #undef static
 // DIVERGENCE END
 
+// DIVERGENCE BEGIN - Worked around std imports and includes mixing
+#include <version>
+// DIVERGENCE END
+
 #if __has_include(<cxxabi.h>)
 #  include <cxxabi.h>
 #endif
